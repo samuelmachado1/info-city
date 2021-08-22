@@ -9,6 +9,8 @@ import { fetchStates } from "../store/states";
 export function Home() {
   const states = useSelector((state) => state.states.items);
   const stateId = useSelector((state) => state.states.stateItem);
+  const countyItem = useSelector((state) => state.states.countyItem);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,9 +26,8 @@ export function Home() {
       </aside>
       <main id="main-component">
         <div>
-          <States states={states} stateId={stateId} />
+          <States states={states} stateId={stateId} countyItem={countyItem} />
         </div>
-        {/* {states ? <div>{console.log("teste", states)}</div> : null} */}
       </main>
     </div>
   );
