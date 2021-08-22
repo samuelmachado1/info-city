@@ -5,11 +5,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Button from "@material-ui/core/Button";
 
-import { fetchStates } from "../../store/states";
-
-import State from "../State";
+import { fetchStateById } from "../../store/states";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -22,10 +19,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function States({ states }) {
+export default function States({ states, stateId }) {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [state, setState] = React.useState("");
+
+  const handleChange = (event) => {
+    setState(event.target.value);
+    dispatch(fetchStateById(event.target.value));
+  };
   const handleClose = () => {
     setOpen(false);
   };
@@ -36,9 +39,9 @@ export default function States({ states }) {
   return (
     <div className="states">
       <div>
-        <Button className={classes.button} onClick={true}>
+        <InputLabel className={classes.button} onClick={true}>
           Selecione o Estado da cidade buscada
-        </Button>
+        </InputLabel>
         <FormControl className={classes.formControl}>
           <InputLabel id="demo-controlled-open-select-label">
             Estados
@@ -49,23 +52,40 @@ export default function States({ states }) {
             open={open}
             onClose={handleClose}
             onOpen={handleOpen}
-            value={MenuItem.value}
-            onChange={dispatch(fetchStates())}
+            value={state}
+            onChange={handleChange}
           >
-            {states.map(
-              (state) => (
-                // <State key={state.id} state={state} />
-                <MenuItem value={state.id}>{state.nome}</MenuItem>
-              )
-              // console.log("STATES", state)
-            )}
-            {/* <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem> */}
+            {states.map((state) => (
+              <MenuItem value={state.id}>
+                {state.nome} - {state.sigla}
+              </MenuItem>
+            ))}
           </Select>
+          {state && state !== "" ? (
+            <div>
+              <br />
+              <div>Municípios</div>
+
+              <Select
+                labelId="input-municipio-select-label"
+                id="input-municipio-select"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={MenuItem.value}
+                onChange={true}
+              >
+                {stateId.map(
+                  (county) => (
+                    console.log("by", county),
+                    (<MenuItem value={county.id}>{county.nome}</MenuItem>)
+                  )
+                )}
+              </Select>
+            </div>
+          ) : (
+            console.log("NAOAOA bom")
+          )}
         </FormControl>
       </div>
     </div>

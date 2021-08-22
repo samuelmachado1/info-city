@@ -1,23 +1,15 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import States from "./components/States";
-
-import { fetchStates } from "./store/states";
+// import { Grid } from "@material-ui/core";
+import React from "react";
+import Grid from "./components/Grid";
+import { Home } from "./pages/Home";
 
 function App() {
-  const states = useSelector((state) => state.states.items);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchStates());
-  }, [dispatch]);
-
   return (
-    <main className="main">
-      <States states={states} />
-      {/* <SelectedState /> */}
-    </main>
+    <Home />
+    // <Grid />
+    // <main className="main">
+    // </main>
+    // <div>test</div>
   );
 }
 

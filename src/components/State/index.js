@@ -19,7 +19,7 @@ export default function State({ state }) {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={2}
-          onClick={() => dispatch(getStateItem(state))}
+          // onClick={() => dispatch(getStateItem(state))}
         ></Select>
       </FormControl>
     </div>

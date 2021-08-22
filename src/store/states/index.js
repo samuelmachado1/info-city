@@ -1,18 +1,17 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
-const DRINKS_URL = "http://localhost:4000";
 const API = "https://servicodados.ibge.gov.br/api/v1/";
 const INITIAL_STATE = {
   items: [],
-  stateItem: null,
+  stateItem: [],
   error: null,
 };
 
 // Actions
-export const loadedAllStatesSuccess = createAction("LOADED_ALL_DRINKS_SUCCESS");
-export const loadedStateSuccess = createAction("LOADED_DRINK_SUCCESS");
-export const loadStatesError = createAction("LOAD_DRINKS_ERROR");
-export const getStateItem = createAction("GET_DRINK_ITEM");
+export const loadedAllStatesSuccess = createAction("LOADED_ALL_STATES_SUCCESS");
+export const loadedStateSuccess = createAction("LOADED_STATE_SUCCESS");
+export const loadStatesError = createAction("LOAD_STATES_ERROR");
+export const getStateItem = createAction("GET_STATE_ITEM");
 
 // Fetchs
 export const fetchStates = () => {
@@ -24,9 +23,9 @@ export const fetchStates = () => {
   };
 };
 
-export const fetchStateById = (id) => {
+export const fetchStateById = (uf) => {
   return (dispatch) => {
-    return fetch(`${DRINKS_URL}/states/${id}`)
+    return fetch(`${API}/localidades/estados/${uf}/municipios`)
       .then((res) => res.json())
       .then((data) => dispatch(loadedStateSuccess(data)))
       .catch((error) => dispatch(loadStatesError(error)));
@@ -43,10 +42,6 @@ export default createReducer(INITIAL_STATE, {
     stateItem: action.payload,
   }),
   [loadStatesError]: (state, action) => ({ ...state, error: action.payload }),
-  [getStateItem]: (state, action) => ({
-    ...state,
-    stateItem: selectedItem(state, action.payload),
-  }),
 });
 
 export function selectedItem(state, id) {
