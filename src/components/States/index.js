@@ -6,7 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-import { fetchStateById } from "../../store/states";
+import { fetchCounty, fetchStateById } from "../../store/states";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -24,11 +24,19 @@ export default function States({ states, stateId }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState("");
+  const [county, setCounty] = React.useState("");
 
   const handleChange = (event) => {
     setState(event.target.value);
     dispatch(fetchStateById(event.target.value));
   };
+
+  const handleChangeCounty = (event) => {
+    console.log("COun", event.target.value);
+    setCounty(event.target.value);
+    dispatch(fetchCounty(event.target.value));
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -43,9 +51,8 @@ export default function States({ states, stateId }) {
           Selecione o Estado da cidade buscada
         </InputLabel>
         <FormControl className={classes.formControl}>
-          <InputLabel id="demo-controlled-open-select-label">
-            Estados
-          </InputLabel>
+          <br />
+          <div>Estados</div>
           <Select
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"
@@ -72,20 +79,16 @@ export default function States({ states, stateId }) {
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}
-                value={MenuItem.value}
-                onChange={true}
+                value={county}
+                onChange={handleChangeCounty}
               >
-                {stateId.map(
-                  (county) => (
-                    console.log("by", county),
-                    (<MenuItem value={county.id}>{county.nome}</MenuItem>)
-                  )
-                )}
+                {stateId.map((county) => (
+                  <MenuItem value={county.id}>{county.nome}</MenuItem>
+                ))}
               </Select>
             </div>
-          ) : (
-            console.log("NAOAOA bom")
-          )}
+          ) : null}
+          {county && county !== "" ? <div>tetete</div> : null}
         </FormControl>
       </div>
     </div>
