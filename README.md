@@ -26,8 +26,16 @@ $ cd info-city
 
 $ npm start
 
+.
+.
+
+.
+.
+
+.
+
 ## Eu sou Samuel Machado!
 
-:computer: - Front-End Developer!
+:computer: - [Linkedin](https://www.linkedin.com/in/samuel-machado-347204158) - Front-End Developer!
 
 :house_with_garden: - Resido em São Sebastião/DF.
