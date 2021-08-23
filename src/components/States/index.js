@@ -67,7 +67,7 @@ export default function States({ states, stateId, countyItem }) {
           <strong>Selecione o estado do município</strong>
         </InputLabel>
         <FormControl className={classes.formControl}>
-          <div id="div-select">
+          <div className="div-select">
             <br />
             <p>Estado</p>
             <Select
@@ -86,12 +86,10 @@ export default function States({ states, stateId, countyItem }) {
               ))}
             </Select>
           </div>
-        </FormControl>
-        <FormControl className={classes.formControl}>
           {state && state !== "" ? (
-            <div>
+            <div className="div-select">
               <br />
-              <div>Municípios</div>
+              <div>Município</div>
               <Select
                 labelId="input-municipio-select-label"
                 id="input-municipio-select"
@@ -107,61 +105,53 @@ export default function States({ states, stateId, countyItem }) {
               </Select>
             </div>
           ) : null}
-          {countyItem && countyItem.length !== 0 && countyId
-            ? (console.log("countyy", countyId),
-              (
-                <form className={classes.root} noValidate autoComplete="off">
-                  <br />
-                  <div>Informações da micro região</div>
-                  <div>
-                    <TextField
-                      id="filled-multiline-flexible"
-                      label="Microregião"
-                      multiline
-                      maxRows={4}
-                      value={countyItem[0].municipio.microrregiao.nome}
-                      onChange={handleChange}
-                      variant="filled"
-                    />
-                    <br />
-                    <div>Informações de meso região</div>
-                    <TextField
-                      id="filled-multiline-flexible"
-                      label="Mesoregião"
-                      multiline
-                      maxRows={4}
-                      value={
-                        countyItem[0].municipio.microrregiao.mesorregiao.nome
-                      }
-                      onChange={handleChange}
-                      variant="filled"
-                    />
-                    <TextField
-                      id="filled-multiline-flexible"
-                      label="UF"
-                      maxRows={2}
-                      value={
-                        countyItem[0].municipio.microrregiao.mesorregiao.UF
-                          .sigla
-                      }
-                      onChange={handleChange}
-                      variant="filled"
-                    />
-                    <TextField
-                      id="filled-multiline-flexible"
-                      label="Região do Município"
-                      maxRows={2}
-                      value={
-                        countyItem[0].municipio.microrregiao.mesorregiao.UF
-                          .regiao.nome
-                      }
-                      onChange={handleChange}
-                      variant="filled"
-                    />
-                  </div>
-                </form>
-              ))
-            : null}
+          {countyItem && countyItem.length !== 0 && countyId ? (
+            <form className={classes.root} noValidate autoComplete="off">
+              <br />
+
+              <div>
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="Microregião"
+                  value={countyItem[0].municipio.microrregiao.nome}
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                />
+
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="Mesoregião"
+                  multiline
+                  value={countyItem[0].municipio.microrregiao.mesorregiao.nome}
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                />
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="UF"
+                  value={
+                    countyItem[0].municipio.microrregiao.mesorregiao.UF.sigla
+                  }
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                />
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="Região do Município"
+                  value={
+                    countyItem[0].municipio.microrregiao.mesorregiao.UF.regiao
+                      .nome
+                  }
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                />
+              </div>
+            </form>
+          ) : null}
         </FormControl>
       </div>
     </div>

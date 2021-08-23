@@ -62,18 +62,19 @@ body, input, textarea, button, p{
   justify-content: center;
   margin-top: 5%;
 }
-#div-select{
+.div-select{
   border: #29292e;
   /* border-style: solid; */
-  min-width: 300px;
+  min-width: 350px;
+  position: flex;
 }
 
 #demo-controlled-open-select{
-  min-width: 350px;
+  min-width: 450px;
 }
 
 #input-municipio-select{
-  min-width: 350px;
+  min-width: 450px;
 }
 
 strong{
