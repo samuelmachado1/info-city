@@ -24,7 +24,7 @@ body, input, textarea, button, p{
 }
 
 #aside-component {
-  flex: 7;
+  flex: 6;
 
   background: #ffffff;
   color: #fff;
@@ -37,8 +37,19 @@ body, input, textarea, button, p{
 }
 
 #img-aside{
-  margin-left: 15%;
+  
+  position: center;
   max-width: 500px;
+}
+
+#strong-aside{
+  text-align: justify;
+}
+
+#p-aside{
+  font-size: 18px;
+  padding-top: 10px;
+  text-align: justify;
 }
 
 #main-component{
@@ -50,6 +61,19 @@ body, input, textarea, button, p{
   align-items: top;
   justify-content: center;
   margin-top: 5%;
+}
+#div-select{
+  border: #29292e;
+  /* border-style: solid; */
+  min-width: 300px;
+}
+
+#demo-controlled-open-select{
+  min-width: 350px;
+}
+
+#input-municipio-select{
+  min-width: 150px;
 }
 
 strong{

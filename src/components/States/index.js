@@ -63,31 +63,34 @@ export default function States({ states, stateId, countyItem }) {
     <div className="states">
       <div>
         <InputLabel className={classes.button} onClick={console.log("click")}>
-          <strong>Selecione o Estado da cidade buscada</strong>
+          <strong>Selecione o estado do município</strong>
         </InputLabel>
         <FormControl className={classes.formControl}>
-          <br />
-          <p>Estados</p>
-          <Select
-            labelId="demo-controlled-open-select-label"
-            id="demo-controlled-open-select"
-            open={open}
-            onClose={handleClose}
-            onOpen={handleOpen}
-            value={state}
-            onChange={handleChange}
-          >
-            {states.map((state) => (
-              <MenuItem value={state.id}>
-                {state.nome} - {state.sigla}
-              </MenuItem>
-            ))}
-          </Select>
+          <div id="div-select">
+            <br />
+            <p>Estado</p>
+            <Select
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              open={open}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              value={state}
+              onChange={handleChange}
+            >
+              {states.map((state) => (
+                <MenuItem value={state.id}>
+                  {state.nome} - {state.sigla}
+                </MenuItem>
+              ))}
+            </Select>
+          </div>
+        </FormControl>
+        <FormControl className={classes.formControl}>
           {state && state !== "" ? (
             <div>
               <br />
               <div>Municípios</div>
-
               <Select
                 labelId="input-municipio-select-label"
                 id="input-municipio-select"

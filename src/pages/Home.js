@@ -21,8 +21,10 @@ export function Home() {
     <div id="home-aside">
       <aside id="aside-component">
         <img id="img-aside" src={cityInfo3} alt="Imagem da lateral" />
-        <strong>Obtenha informações sobre sua cidade</strong>
-        <p>Consumindo dados da API do IBGE</p>
+        <strong id="strong-aside">Dados sobre sua cidade</strong>
+        <p id="p-aside">
+          Informações de microrregião, mesorregião, UF e região dos municípios.
+        </p>
       </aside>
       <main id="main-component">
         <div>
