@@ -93,8 +93,6 @@ body, input, textarea, button, p{
   max-width: 600px;
   align-items: baseline;
   text-align: justify;
-  /* border: red;
-  border-style: dashed; */
 }
 
 .container-info{
@@ -105,13 +103,10 @@ body, input, textarea, button, p{
   max-width: 600px;
   align-items: baseline;
   text-align: justify;
-  /* border: #29292e;
-  border-style: dashed; */
 }
 
 .div-select{
   border: #29292e;
-  /* border-style: solid; */
   min-width: 350px;
   position: flex;
 }

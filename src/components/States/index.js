@@ -63,7 +63,7 @@ export default function States({ states, stateId, countyItem }) {
   return (
     <div className="states">
       <div id="container-main">
-        <InputLabel className={classes.button} onClick={console.log("click")}>
+        <InputLabel className={classes.button} onClick={""}>
           <strong id="strong-main">SELECIONE O ESTADO DO MUNICÍPIO</strong>
         </InputLabel>
         <FormControl className={classes.formControl}>

@@ -36,7 +36,6 @@ export const fetchStateById = (uf) => {
 };
 
 export const fetchCounty = (id) => {
-  console.log("county", id);
   return (dispatch) => {
     return fetch(`${API}/localidades/municipios/${id}/distritos`)
       .then((res) => res.json())
@@ -61,7 +60,3 @@ export default createReducer(INITIAL_STATE, {
     countyItem: action.payload,
   }),
 });
-
-export function selectedItem(state, id) {
-  return state.items.find((item) => item.id === id);
-}
