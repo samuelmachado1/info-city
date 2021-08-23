@@ -64,14 +64,25 @@ body, input, textarea, button, p{
 }
 
 #container-main{
-  display: flex;
+  margin-top: 150px;
+  display: block;
   flex-direction: column;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   align-items: baseline;
   text-align: justify;
   border: #29292e;
   /* border-style: dashed; */
+}
+#strong-main{
+  position: relative;
+  font-size: 25px;
+  padding-left: 10px;
+
+}
+#textField-meso{
+  min-width: 200px;
+  padding-right: 5px;
 }
 
 .container-body{

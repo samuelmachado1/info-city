@@ -64,7 +64,7 @@ export default function States({ states, stateId, countyItem }) {
     <div className="states">
       <div id="container-main">
         <InputLabel className={classes.button} onClick={console.log("click")}>
-          <strong>Selecione o estado do município</strong>
+          <strong id="strong-main">SELECIONE O ESTADO DO MUNICÍPIO</strong>
         </InputLabel>
         <FormControl className={classes.formControl}>
           <div className="div-select">
@@ -112,42 +112,57 @@ export default function States({ states, stateId, countyItem }) {
               <div className="container-info">
                 <TextField
                   id="filled-multiline-flexible"
-                  label="Microregião"
-                  value={countyItem[0].municipio.microrregiao.nome}
-                  onChange={handleChange}
-                  variant="outlined"
-                  size="small"
-                />
-
-                <TextField
-                  id="filled-multiline-flexible"
-                  label="Mesorregião"
-                  multiline
-                  value={countyItem[0].municipio.microrregiao.mesorregiao.nome}
-                  onChange={handleChange}
-                  variant="outlined"
-                  size="small"
-                />
-                <TextField
-                  id="filled-multiline-flexible"
-                  label="UF"
-                  value={
-                    countyItem[0].municipio.microrregiao.mesorregiao.UF.sigla
-                  }
-                  onChange={handleChange}
-                  variant="outlined"
-                  size="small"
-                />
-                <TextField
-                  id="filled-multiline-flexible"
                   label="Região do Município"
                   value={
                     countyItem[0].municipio.microrregiao.mesorregiao.UF.regiao
                       .nome
                   }
+                  InputProps={{
+                    readOnly: true,
+                  }}
                   onChange={handleChange}
                   variant="outlined"
                   size="small"
+                />
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="UF do município"
+                  value={
+                    countyItem[0].municipio.microrregiao.mesorregiao.UF.sigla
+                  }
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  onChange={handleChange}
+                  variant="outlined"
+                  size="small"
+                />
+                <TextField
+                  id="filled-multiline-flexible"
+                  label="Microrregião"
+                  multiline
+                  minRows={2}
+                  value={countyItem[0].municipio.microrregiao.nome}
+                  onChange={handleChange}
+                  variant="outlined"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  size="medium"
+                />
+
+                <TextField
+                  id="textField-meso"
+                  label="Mesorregião"
+                  multiline
+                  minRows={2}
+                  value={countyItem[0].municipio.microrregiao.mesorregiao.nome}
+                  onChange={handleChange}
+                  variant="outlined"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  size="large"
                 />
               </div>
             </form>
