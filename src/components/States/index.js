@@ -32,15 +32,16 @@ export default function States({ states, stateId, countyItem }) {
   const [open, setOpen] = React.useState(false);
   const [openCounty, setOpenCounty] = React.useState(false);
   const [state, setState] = React.useState("");
-  const [countyId, setcCountyId] = React.useState("");
+  const [countyId, setCountyId] = React.useState("");
 
   const handleChange = (event) => {
     setState(event.target.value);
     dispatch(fetchStateById(event.target.value));
+    setCountyId("");
   };
 
   const handleChangeCounty = (event) => {
-    setcCountyId(event.target.value);
+    setCountyId(event.target.value);
     dispatch(fetchCounty(event.target.value));
   };
 
@@ -106,8 +107,8 @@ export default function States({ states, stateId, countyItem }) {
               </Select>
             </div>
           ) : null}
-          {countyItem && countyItem.length !== 0
-            ? (console.log("counrt", countyItem[0]),
+          {countyItem && countyItem.length !== 0 && countyId
+            ? (console.log("countyy", countyId),
               (
                 <form className={classes.root} noValidate autoComplete="off">
                   <br />
