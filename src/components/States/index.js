@@ -121,7 +121,7 @@ export default function States({ states, stateId, countyItem }) {
 
                 <TextField
                   id="filled-multiline-flexible"
-                  label="Mesoregião"
+                  label="Mesorregião"
                   multiline
                   value={countyItem[0].municipio.microrregiao.mesorregiao.nome}
                   onChange={handleChange}
