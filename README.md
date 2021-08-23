@@ -22,6 +22,10 @@ $ git clone <https://github.com/samuelmachado1/info-city.git>
 
 $ cd info-city
 
+## Execute o npm install
+
+$ npm install
+
 ## Execute o comando de Start
 
 $ npm start
