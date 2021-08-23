@@ -62,7 +62,7 @@ export default function States({ states, stateId, countyItem }) {
   };
   return (
     <div className="states">
-      <div>
+      <div id="container-main">
         <InputLabel className={classes.button} onClick={console.log("click")}>
           <strong>Selecione o estado do município</strong>
         </InputLabel>
@@ -107,9 +107,7 @@ export default function States({ states, stateId, countyItem }) {
           ) : null}
           {countyItem && countyItem.length !== 0 && countyId ? (
             <form className={classes.root} noValidate autoComplete="off">
-              <br />
-
-              <div>
+              <div id="container-info">
                 <TextField
                   id="filled-multiline-flexible"
                   label="Microregião"
