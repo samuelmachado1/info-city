@@ -71,19 +71,33 @@ body, input, textarea, button, p{
   align-items: baseline;
   text-align: justify;
   border: #29292e;
-  border-style: dashed;
+  /* border-style: dashed; */
 }
 
-#container-info{
+.container-body{
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 600px;
   align-items: baseline;
   text-align: justify;
-  border: #29292e;
-  border-style: dashed;
+  /* border: red;
+  border-style: dashed; */
 }
+
+.container-info{
+  padding-top: 20px;
+  display: block;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: baseline;
+  text-align: justify;
+  /* border: #29292e;
+  border-style: dashed; */
+}
+
 .div-select{
   border: #29292e;
   /* border-style: solid; */

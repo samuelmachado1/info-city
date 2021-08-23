@@ -69,45 +69,47 @@ export default function States({ states, stateId, countyItem }) {
         <FormControl className={classes.formControl}>
           <div className="div-select">
             <br />
-            <p>Estado</p>
-            <Select
-              labelId="demo-controlled-open-select-label"
-              id="demo-controlled-open-select"
-              open={open}
-              onClose={handleClose}
-              onOpen={handleOpen}
-              value={state}
-              onChange={handleChange}
-            >
-              {states.map((state) => (
-                <MenuItem value={state.id}>
-                  {state.nome} - {state.sigla}
-                </MenuItem>
-              ))}
-            </Select>
-          </div>
-          {state && state !== "" ? (
-            <div className="div-select">
-              <br />
-              <div>Município</div>
+            <div className="container-body">
+              <p>Estado</p>
               <Select
-                labelId="input-municipio-select-label"
-                id="input-municipio-select"
-                open={openCounty}
-                onClose={handleCloseCounty}
-                onOpen={handleOpenCounty}
-                value={countyId}
-                onChange={handleChangeCounty}
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={state}
+                onChange={handleChange}
               >
-                {stateId.map((county) => (
-                  <MenuItem value={county.id}>{county.nome}</MenuItem>
+                {states.map((state) => (
+                  <MenuItem value={state.id}>
+                    {state.nome} - {state.sigla}
+                  </MenuItem>
                 ))}
               </Select>
+              {state && state !== "" ? (
+                <div className="div-select">
+                  <br />
+                  <div>Município</div>
+                  <Select
+                    labelId="input-municipio-select-label"
+                    id="input-municipio-select"
+                    open={openCounty}
+                    onClose={handleCloseCounty}
+                    onOpen={handleOpenCounty}
+                    value={countyId}
+                    onChange={handleChangeCounty}
+                  >
+                    {stateId.map((county) => (
+                      <MenuItem value={county.id}>{county.nome}</MenuItem>
+                    ))}
+                  </Select>
+                </div>
+              ) : null}
             </div>
-          ) : null}
+          </div>
           {countyItem && countyItem.length !== 0 && countyId ? (
             <form className={classes.root} noValidate autoComplete="off">
-              <div id="container-info">
+              <div className="container-info">
                 <TextField
                   id="filled-multiline-flexible"
                   label="Microregião"
