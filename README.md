@@ -7,20 +7,22 @@ Este projeto foi desenvolvido com REACT + Redux, utilizando as seguintes bibliot
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com),
-[Node.js](https://nodejs.org/en/).
 
-### 🎲 Rodando a aplicação
+[Git](https://git-scm.com)
 
-# Clone este repositório
+[Node.js](https://nodejs.org/en/)
+
+## 🎲 Rodando a aplicação
+
+### Clone este repositório
 
 $ git clone <https://github.com/samuelmachado1/info-city.git>
 
-# Acesse a pasta do projeto no terminal/cmd
+## Acesse a pasta do projeto no terminal/cmd
 
 $ cd info-city
 
-# Execute o comando de Start
+## Execute o comando de Start
 
 $ npm start
 
