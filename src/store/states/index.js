@@ -4,6 +4,7 @@ const API = "https://servicodados.ibge.gov.br/api/v1/";
 const INITIAL_STATE = {
   items: [],
   stateItem: [],
+  countyItem: [],
   error: null,
 };
 
@@ -35,8 +36,9 @@ export const fetchStateById = (uf) => {
 };
 
 export const fetchCounty = (id) => {
+  console.log("county", id);
   return (dispatch) => {
-    return fetch(`${API}/localidades/estados/municipios/${id}/distritos`)
+    return fetch(`${API}/localidades/municipios/${id}/distritos`)
       .then((res) => res.json())
       .then((data) => dispatch(loadedCountySuccess(data)))
       .catch((error) => dispatch(loadedCountyError(error)));

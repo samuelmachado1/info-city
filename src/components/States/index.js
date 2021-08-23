@@ -5,6 +5,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import TextField from "@material-ui/core/TextField";
 
 import { fetchCounty, fetchStateById } from "../../store/states";
 
@@ -17,14 +18,20 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
 }));
 
-export default function States({ states, stateId }) {
+export default function States({ states, stateId, countyItem }) {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState("");
-  const [county, setCounty] = React.useState("");
+  const [countyId, setcCountyId] = React.useState("");
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -32,8 +39,7 @@ export default function States({ states, stateId }) {
   };
 
   const handleChangeCounty = (event) => {
-    console.log("COun", event.target.value);
-    setCounty(event.target.value);
+    setcCountyId(event.target.value);
     dispatch(fetchCounty(event.target.value));
   };
 
@@ -47,7 +53,7 @@ export default function States({ states, stateId }) {
   return (
     <div className="states">
       <div>
-        <InputLabel className={classes.button} onClick={true}>
+        <InputLabel className={classes.button} onClick={console.log("click")}>
           Selecione o Estado da cidade buscada
         </InputLabel>
         <FormControl className={classes.formControl}>
@@ -79,7 +85,7 @@ export default function States({ states, stateId }) {
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}
-                value={county}
+                value={countyId}
                 onChange={handleChangeCounty}
               >
                 {stateId.map((county) => (
@@ -88,7 +94,61 @@ export default function States({ states, stateId }) {
               </Select>
             </div>
           ) : null}
-          {county && county !== "" ? <div>tetete</div> : null}
+          {countyItem && countyItem.length !== 0
+            ? (console.log("counrt", countyItem[0]),
+              (
+                <form className={classes.root} noValidate autoComplete="off">
+                  <br />
+                  <div>Informações da micro região</div>
+                  <div>
+                    <TextField
+                      id="filled-multiline-flexible"
+                      label="Microregião"
+                      multiline
+                      maxRows={4}
+                      value={countyItem[0].municipio.microrregiao.nome}
+                      onChange={handleChange}
+                      variant="filled"
+                    />
+                    <br />
+                    <div>Informações de meso região</div>
+                    <TextField
+                      id="filled-multiline-flexible"
+                      label="Mesoregião"
+                      multiline
+                      maxRows={4}
+                      value={
+                        countyItem[0].municipio.microrregiao.mesorregiao.nome
+                      }
+                      onChange={handleChange}
+                      variant="filled"
+                    />
+                    <TextField
+                      id="filled-multiline-flexible"
+                      label="UF"
+                      maxRows={2}
+                      value={
+                        countyItem[0].municipio.microrregiao.mesorregiao.UF
+                          .sigla
+                      }
+                      onChange={handleChange}
+                      variant="filled"
+                    />
+                    <TextField
+                      id="filled-multiline-flexible"
+                      label="Região do Município"
+                      maxRows={2}
+                      value={
+                        countyItem[0].municipio.microrregiao.mesorregiao.UF
+                          .regiao.nome
+                      }
+                      onChange={handleChange}
+                      variant="filled"
+                    />
+                  </div>
+                </form>
+              ))
+            : null}
         </FormControl>
       </div>
     </div>
