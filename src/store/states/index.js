@@ -19,7 +19,7 @@ export const getStateItem = createAction("GET_STATE_ITEM");
 // Fetchs
 export const fetchStates = () => {
   return (dispatch) => {
-    return fetch(`${API}/localidades/estados`)
+    return fetch(`${API}/localidades/estados?orderBy=nome`)
       .then((res) => res.json())
       .then((data) => dispatch(loadedAllStatesSuccess(data)))
       .catch((error) => dispatch(loadStatesError(error)));
