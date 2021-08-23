@@ -1,8 +1,8 @@
-# Olá!
+# City Info - V1
 
 Este é o CityInfo - Aplicação que traz dados dos municípios a partir da API do IBGE (https://servicodados.ibge.gov.br/api/docs/localidades)
 
-Este projeto foi desenvolvido com REACT + Redux, utilizando as seguintes bibliotecas adicionais: -
+Este projeto foi desenvolvido com REACT + Redux
 
 ### Pré-requisitos
 
@@ -12,7 +12,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 [Node.js](https://nodejs.org/en/)
 
-## 🎲 Rodando a aplicação
+# 🎲 Rodando a aplicação
 
 ### Clone este repositório
 
