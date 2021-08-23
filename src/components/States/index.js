@@ -30,6 +30,7 @@ export default function States({ states, stateId, countyItem }) {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [openCounty, setOpenCounty] = React.useState(false);
   const [state, setState] = React.useState("");
   const [countyId, setcCountyId] = React.useState("");
 
@@ -50,15 +51,23 @@ export default function States({ states, stateId, countyItem }) {
   const handleOpen = () => {
     setOpen(true);
   };
+
+  const handleCloseCounty = () => {
+    setOpenCounty(false);
+  };
+
+  const handleOpenCounty = () => {
+    setOpenCounty(true);
+  };
   return (
     <div className="states">
       <div>
         <InputLabel className={classes.button} onClick={console.log("click")}>
-          Selecione o Estado da cidade buscada
+          <strong>Selecione o Estado da cidade buscada</strong>
         </InputLabel>
         <FormControl className={classes.formControl}>
           <br />
-          <div>Estados</div>
+          <p>Estados</p>
           <Select
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"
@@ -82,9 +91,9 @@ export default function States({ states, stateId, countyItem }) {
               <Select
                 labelId="input-municipio-select-label"
                 id="input-municipio-select"
-                open={open}
-                onClose={handleClose}
-                onOpen={handleOpen}
+                open={openCounty}
+                onClose={handleCloseCounty}
+                onOpen={handleOpenCounty}
                 value={countyId}
                 onChange={handleChangeCounty}
               >

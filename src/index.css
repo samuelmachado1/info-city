@@ -4,14 +4,15 @@
   box-sizing: border-box;
 }
 body{
-  background: #f8f8f8;
+  background: hsl(59, 95%, 76%);
   color: #29292e;
 
   
 }
 
-body, input, textarea, button{
+body, input, textarea, button, p{
   font:400 16px 'Roboto', sans-serif;
+  color: #29292e;
 }
 
 #home-aside{
@@ -25,7 +26,7 @@ body, input, textarea, button{
 #aside-component {
   flex: 7;
 
-  background: #835afd;
+  background: #ffffff;
   color: #fff;
 
   display: flex;
@@ -55,4 +56,5 @@ strong{
   font: 700 36px 'Popins', sans-serif;
   line-height: 42px;
   margin-top: 16px;
+  color: #29292e;
 }

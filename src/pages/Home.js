@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import test from "../assets/images/test.jpeg";
+import cityInfo3 from "../assets/images/cityInfo3.jpeg";
 import States from "../components/States/index";
 
 import { fetchStates } from "../store/states";
@@ -20,7 +20,7 @@ export function Home() {
   return (
     <div id="home-aside">
       <aside id="aside-component">
-        <img id="img-aside" src={test} alt="Imagem da lateral" />
+        <img id="img-aside" src={cityInfo3} alt="Imagem da lateral" />
         <strong>Obtenha informações sobre sua cidade</strong>
         <p>Consumindo dados da API do IBGE</p>
       </aside>
