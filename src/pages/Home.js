@@ -26,11 +26,11 @@ export function Home() {
           Informações de microrregião, mesorregião, UF e região dos municípios.
         </p>
       </aside>
-      <main id="main-component">
+      <aside id="main-component">
         <div>
           <States states={states} stateId={stateId} countyItem={countyItem} />
         </div>
-      </main>
+      </aside>
     </div>
   );
 }

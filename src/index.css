@@ -25,7 +25,10 @@ body, input, textarea, button, p{
 
 #aside-component {
   flex: 6;
-
+  width: 45%;
+  height: 100%;
+  border: #29292e;
+  border-style: dashed;
   background: #ffffff;
   color: #fff;
 
@@ -35,6 +38,11 @@ body, input, textarea, button, p{
   padding: 102px 80px ;
 
 }
+
+.states{
+ 
+}
+
 
 #img-aside{
   
@@ -55,12 +63,17 @@ body, input, textarea, button, p{
 #main-component{
   flex: 8;
 
-  padding: 0 32px;
+
 
   display: flex;
   align-items: top;
   justify-content: center;
-  margin-top: 5%;
+
+
+  width: 65%;
+  height: 100%;
+  border: #92e;
+  border-style: dashed;
 }
 
 #container-main{
@@ -125,3 +138,5 @@ strong{
   margin-top: 16px;
   color: #29292e;
 }
+
+
