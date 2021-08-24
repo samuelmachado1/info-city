@@ -15,20 +15,20 @@ body, input, textarea, button, p{
   color: #29292e;
 }
 
+/* Esse componente envolve toda o HOME */
 #home-aside{
   display: flex;
   align-items: stretch;
   height: 100vh;
-
+  width: 100%;
   
 }
 
+/* Componente que envolve todo conteúdo do lado esquerdo da tela HOME.  */
 #aside-component {
   flex: 6;
   width: 45%;
   height: 100%;
-  border: #29292e;
-  border-style: dashed;
   background: #ffffff;
   color: #fff;
 
@@ -39,8 +39,37 @@ body, input, textarea, button, p{
 
 }
 
-.states{
+/* Componente que envolve todo conteúdo do lado direito da tela HOME.  */
+#main-component{
+  flex: 8;
+  width: 65%;
+  
+  height: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+
  
+}
+
+/* Estilização do Título do conteúdo do lado #main-component */
+#strong-main{
+  width: 50%;
+  min-width: 50px;
+  max-width: 450px;
+  position: relative;
+  font-size: 22px;
+  padding-left: 10px;
+  
+
+}
+
+.container-body{
+  /* border: #29292e;
+  border-style: dashed; */
+  max-width: 100px;
+  
+
 }
 
 
@@ -60,18 +89,7 @@ body, input, textarea, button, p{
   text-align: justify;
 }
 
-#main-component{
-  flex: 8;
 
-  display: flex;
-  align-items: top;
-  justify-content: center;
-
-  width: 65%;
-  height: 100%;
-  border: #92e;
-  border-style: dashed;
-}
 
 #container-main{
   margin-top: 150px;
@@ -84,12 +102,7 @@ body, input, textarea, button, p{
   border: #29292e;
   /* border-style: dashed; */
 }
-#strong-main{
-  position: relative;
-  font-size: 25px;
-  padding-left: 10px;
 
-}
 #textField-meso{
   min-width: 200px;
   padding-right: 5px;
