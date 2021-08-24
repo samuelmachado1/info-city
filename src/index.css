@@ -63,12 +63,9 @@ body, input, textarea, button, p{
 #main-component{
   flex: 8;
 
-
-
   display: flex;
   align-items: top;
   justify-content: center;
-
 
   width: 65%;
   height: 100%;
