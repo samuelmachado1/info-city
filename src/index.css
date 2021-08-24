@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *{
   margin:0;
   padding: 0;
@@ -16,17 +15,20 @@ body, input, textarea, button, p{
   color: #29292e;
 }
 
+/* Esse componente envolve toda o HOME */
 #home-aside{
   display: flex;
   align-items: stretch;
   height: 100vh;
-
+  width: 100%;
   
 }
 
+/* Componente que envolve todo conteúdo do lado esquerdo da tela HOME.  */
 #aside-component {
   flex: 6;
-
+  width: 45%;
+  height: 100%;
   background: #ffffff;
   color: #fff;
 
@@ -36,6 +38,40 @@ body, input, textarea, button, p{
   padding: 102px 80px ;
 
 }
+
+/* Componente que envolve todo conteúdo do lado direito da tela HOME.  */
+#main-component{
+  flex: 8;
+  width: 65%;
+  
+  height: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+
+ 
+}
+
+/* Estilização do Título do conteúdo do lado #main-component */
+#strong-main{
+  width: 50%;
+  min-width: 50px;
+  max-width: 450px;
+  position: relative;
+  font-size: 22px;
+  padding-left: 10px;
+  
+
+}
+
+.container-body{
+  /* border: #29292e;
+  border-style: dashed; */
+  max-width: 100px;
+  
+
+}
+
 
 #img-aside{
   
@@ -53,16 +89,7 @@ body, input, textarea, button, p{
   text-align: justify;
 }
 
-#main-component{
-  flex: 8;
 
-  padding: 0 32px;
-
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  margin-top: 5%;
-}
 
 #container-main{
   margin-top: 150px;
@@ -75,12 +102,7 @@ body, input, textarea, button, p{
   border: #29292e;
   /* border-style: dashed; */
 }
-#strong-main{
-  position: relative;
-  font-size: 25px;
-  padding-left: 10px;
 
-}
 #textField-meso{
   min-width: 200px;
   padding-right: 5px;
@@ -94,8 +116,6 @@ body, input, textarea, button, p{
   max-width: 600px;
   align-items: baseline;
   text-align: justify;
-  /* border: red;
-  border-style: dashed; */
 }
 
 .container-info{
@@ -106,13 +126,10 @@ body, input, textarea, button, p{
   max-width: 600px;
   align-items: baseline;
   text-align: justify;
-  /* border: #29292e;
-  border-style: dashed; */
 }
 
 .div-select{
   border: #29292e;
-  /* border-style: solid; */
   min-width: 350px;
   position: flex;
 }
@@ -131,18 +148,5 @@ strong{
   margin-top: 16px;
   color: #29292e;
 }
-=======
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
->>>>>>> 0fa4390 (first version to info city application)
+
